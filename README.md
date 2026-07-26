@@ -9,6 +9,12 @@
 </p>
 
 <p align="center">
+  <a href="https://github.com/etozhegazonokosilka/bag-price-analyzer/actions/workflows/ci.yml">
+    <img
+      alt="CI"
+      src="https://github.com/etozhegazonokosilka/bag-price-analyzer/actions/workflows/ci.yml/badge.svg"
+    >
+  </a>
   <img alt="Python 3.12" src="https://img.shields.io/badge/Python-3.12-3776AB?logo=python&logoColor=white">
   <img alt="Flask 3" src="https://img.shields.io/badge/Flask-3.x-000000?logo=flask&logoColor=white">
   <img alt="Portfolio demo" src="https://img.shields.io/badge/status-portfolio_demo-E5B80B">
