@@ -1,0 +1,33 @@
+# ML зависимости для CLIP модели
+# устанавливаются отдельно от базовых зависимостей
+# 
+# для CPU:
+#   pip install -r requirements-ml.txt
+#
+# для GPU (CUDA 11.8):
+#   pip install torch torchvision --index-url https://download.pytorch.org/whl/cu118
+#   pip install -r requirements-ml.txt
+#
+# для GPU (CUDA 12.1):
+#   pip install torch torchvision --index-url https://download.pytorch.org/whl/cu121
+#   pip install -r requirements-ml.txt
+
+# PyTorch - устанавливается отдельно 
+# torch>=2.0.0
+# torchvision>=0.15.0
+
+# CLIP модель
+open-clip-torch==2.24.0
+
+# Transformers (может требоваться для некоторых моделей)
+transformers==4.45.0
+
+# Accelerate для оптимизации
+accelerate==0.34.0
+
+# Safetensors для безопасной загрузки моделей
+safetensors>=0.4.5
+
+# NumPy уже должен быть установлен из базовых зависимостей
+# numpy>=1.24.0
+

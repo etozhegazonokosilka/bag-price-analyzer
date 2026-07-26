@@ -1,0 +1,46 @@
+# минимальные зависимости для проекта 
+# все версии зафиксированы для воспроизводимого окружения
+
+# HTTP клиент и SSL
+requests==2.31.0
+urllib3==2.2.1
+certifi==2024.8.30
+boto3==1.34.162
+
+# парсинг HTML
+beautifulsoup4==4.12.3
+lxml==5.3.0
+reportlab==4.2.2
+redis==5.0.8
+rq==1.16.2
+
+# загрузка переменных окружения
+python-dotenv==1.0.1
+
+# JS рендеринг
+playwright==1.47.0
+
+# веб фреймворк
+flask==3.0.3
+
+# обработка изображений 
+pillow==10.4.0
+imagehash==4.3.1
+numpy>=1.24.0
+
+# бот
+pyTelegramBotAPI==4.14.0
+PySocks==1.7.1
+
+# ML зависимости (опционально, закомментированы)
+# torch и torchvision устанавливаются отдельно через официальный индекс pytorch
+# transformers==4.45.0
+# accelerate==0.34.0
+# safetensors==0.4.6
+# open-clip-torch==2.24.0
+
+# curl_cffi - только если включен USE_CURL_CFFI=1
+# curl_cffi==0.7.0b7
+
+google-search-results
+

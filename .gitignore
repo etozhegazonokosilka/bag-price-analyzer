@@ -1,0 +1,78 @@
+# Secrets and local configuration
+.env
+.env.*
+!.env.example
+!.env.defaults
+*.pem
+*.key
+*.p12
+*.pfx
+credentials*.json
+secrets*.json
+
+# Proxy pools and private infrastructure
+proxies*.txt
+proxy*.txt
+*.service
+*.bat
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+.venv/
+.venv*/
+venv/
+env/
+ENV/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# Runtime data
+cache/
+results/
+uploads/
+.tmp_uploads/
+.tmp_runtime/
+*.cache
+*.log
+logs.txt
+debug/
+__scrape_result_lines.txt
+
+# User media and generated reports
+*.jpg
+*.jpeg
+*.png
+*.webp
+*.gif
+*.bmp
+*.tif
+*.tiff
+*.pdf
+*.docx
+*.html
+!README*.md
+!docs/**/*.md
+
+# Local tooling and patches
+.agents/
+.codex/
+*.patch
+*.diff
+*.zip
+
+# Editors and operating systems
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+desktop.ini

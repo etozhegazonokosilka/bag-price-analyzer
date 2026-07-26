@@ -1,0 +1,27 @@
+# основные зависимости flask
+flask>=3.0.0
+requests>=2.31.0
+boto3>=1.34.0
+beautifulsoup4>=4.12.0
+pillow>=10.0.0
+imagehash>=4.3.1
+
+# ml зависимости
+# важно: torch и torchvision устанавливаются отдельно через официальный индекс pytorch
+# для cpu: pip install torch torchvision --index-url https://download.pytorch.org/whl/cpu
+# для gpu: pip install torch torchvision --index-url https://download.pytorch.org/whl/cu118
+transformers>=4.45.0
+accelerate>=0.34.0
+# используем только готовые wheel-файлы, без компиляции
+safetensors>=0.4.6
+open-clip-torch>=2.24.0
+
+# для js-рендеринга страниц
+playwright>=1.47.0
+reportlab>=4.0.0
+redis>=5.0.0
+rq>=1.16.0
+
+# для Telegram-бота
+pyTelegramBotAPI>=4.14.0
+PySocks>=1.7.1
