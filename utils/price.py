@@ -24,6 +24,15 @@ CURRENCY_MAP = {
     "SGD": "SGD", "S$": "SGD",  # сингапурский доллар
 }
 
+_CURRENCY_PATTERN = (
+    r"[\$€£¥₽₹₩]|USD|EUR|GBP|JPY|RUB|CAD|AUD|CHF|CNY|INR|KRW|"
+    r"MXN|BRL|ZAR|US\$|CA\$|AU\$|MX\$|CN¥|JP¥|GB\s*£|R\$"
+)
+_PRICE_NUMBER_PATTERN = (
+    r"[0-9]{1,3}(?:[.,\s][0-9]{3})+(?:[.,][0-9]{2})?"
+    r"|[0-9]+(?:[.,][0-9]{2})?"
+)
+
 
 def normalize_currency_code(value: str | None) -> str | None:
     """
@@ -89,11 +98,11 @@ def parse_price_and_currency(text: str) -> tuple[float | None, str | None]:
 
     # улучшенные паттерны для поиска цены
     # паттерн 1: символ валюты перед числом ($1,234.56, €1.234,56, £1,234)
-    pattern1 = r'([\$€£¥₽₹₩]|USD|EUR|GBP|JPY|RUB|CAD|AUD|CHF|CNY|INR|KRW|MXN|BRL|ZAR|US\$|CA\$|AU\$|MX\$|CN¥|JP¥|GB\s*£|R\$)\s*([0-9]{1,3}(?:[,\s][0-9]{3})*(?:\.[0-9]{2})?|[0-9]+(?:\.[0-9]{2})?)'
+    pattern1 = rf"({_CURRENCY_PATTERN})\s*({_PRICE_NUMBER_PATTERN})"
     # паттерн 2: число перед символом валюты (1,234.56$, 1234.56 usd)
-    pattern2 = r'([0-9]{1,3}(?:[,\s][0-9]{3})*(?:\.[0-9]{2})?|[0-9]+(?:\.[0-9]{2})?)\s*([\$€£¥₽₹₩]|USD|EUR|GBP|JPY|RUB|CAD|AUD|CHF|CNY|INR|KRW|MXN|BRL|ZAR|US\$|CA\$|AU\$|MX\$|CN¥|JP¥|GB\s*£|R\$)'
+    pattern2 = rf"({_PRICE_NUMBER_PATTERN})\s*({_CURRENCY_PATTERN})"
     # паттерн 3: просто число с разделителями (может быть без валюты)
-    pattern3 = r'([0-9]{1,3}(?:[,\s][0-9]{3})*(?:\.[0-9]{2})?|[0-9]+(?:\.[0-9]{2})?)'
+    pattern3 = rf"({_PRICE_NUMBER_PATTERN})"
 
     price = None
 

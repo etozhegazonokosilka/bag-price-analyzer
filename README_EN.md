@@ -202,6 +202,16 @@ python scripts/check_style.py
 
 It validates PEP-8-compatible indentation and spacing, line lengths, trailing whitespace, bare `except` clauses, Python syntax, and documentation conventions. Source comments and docstrings are written in Russian, begin with lowercase letters, and do not end with periods.
 
+## Tests
+
+The test suite does not call live APIs and does not require working credentials:
+
+```bash
+python -m unittest discover -s tests -v
+```
+
+It covers the HTTP contract, product URL classification, price and currency formats, JSON-LD extraction, proxy credential masking, URL safety, and HTML report escaping. GitHub Actions runs the same suite on every push and pull request.
+
 ## Public-version security
 
 - `.env`, credentials, proxy files, logs, uploads, and results are excluded by `.gitignore`;

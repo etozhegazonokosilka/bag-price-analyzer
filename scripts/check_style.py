@@ -143,8 +143,10 @@ def check_definition_spacing(
                 )
 
         if isinstance(node, ast.ClassDef):
-            for child in node.body:
+            for child_index, child in enumerate(node.body):
                 if not isinstance(child, (ast.FunctionDef, ast.AsyncFunctionDef)):
+                    continue
+                if child_index == 0:
                     continue
                 start = associated_comment_start(lines, definition_start(child))
                 if blank_lines_before(lines, start) < 1:
